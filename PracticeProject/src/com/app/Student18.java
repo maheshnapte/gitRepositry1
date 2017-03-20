@@ -8,6 +8,7 @@ strictfp final class Q {
 
 }
 
+//added coomet t check git
 // this code is to demo clone() method of object class.
 strictfp class Student18 implements Cloneable {
 	int rollno;
