@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="false" classpath="." destdir="doc" doctitle="Javadoc for Practice Project" nodeprecated="false" nodeprecatedlist="false" noindex="true" nonavbar="false" notree="false" packagenames="com.app" source="1.8" sourcepath="src" splitindex="false" use="true" version="true"/>
+    </target>
+</project>
