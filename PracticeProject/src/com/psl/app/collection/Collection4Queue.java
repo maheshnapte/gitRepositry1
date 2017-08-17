@@ -1,4 +1,4 @@
-package com.app;
+package com.psl.app.collection;
 
 import java.util.PriorityQueue;
 

@@ -1,25 +1,39 @@
 package com.app;
 
-class Animal {
-	
+class Animal11 {
+
 	static int t = 12;
+
 	void eat() {
 		System.out.println("eating...");
 	}
+
+	static void p() {
+		System.out.println("In Anmals p()");
+	}
 }
 
-class Dog extends Animal {
+class Dog extends Animal11 {
 
-	@Override
+//	@Override
 	void eat() {
 		System.out.println("Dog eating...");
 	}
 
 	void bark() {
-		t=23;
-		System.out.println("t : "+t);
+		
+		eat();
+		Dog.p();
+//		t = 23;
+		System.out.println("t : " + t);
 		System.out.println("barking...");
 	}
+	
+	
+//	public static void p() {
+//		System.out.println("In Dog's p()");
+//	}
+	
 }
 
 public class InheritancDemoClass {
@@ -28,5 +42,8 @@ public class InheritancDemoClass {
 		Dog d = new Dog();
 		d.bark();
 		d.eat();
+		
+		Dog.p();
+		System.out.println(Dog.t);
 	}
 }

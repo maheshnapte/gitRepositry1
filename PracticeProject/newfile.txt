@@ -1,0 +1,3 @@
+greeting=Hello, how are you?
+
+greeting=Halo, apa kabar?s

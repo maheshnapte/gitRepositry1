@@ -1,4 +1,4 @@
-package com.app;
+package com.psl.app.collection;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -62,24 +62,19 @@ class Species {
 class HashSetDemo {
 
 	public static void main(String[] args) {
-
-		HashSet h = new HashSet();
-		h.add("B");
-		h.add("C");
-		h.add("D");
-		h.add("Z");
-		h.add(null);
-		h.add(10);
-		System.out.println(h.add("Z"));
-
-		System.out.println(h);
-
-		System.out.println("User defined objects in a HashSet ..");
+		/*
+		 * HashSet h = new HashSet(); h.add("B"); h.add("C"); h.add("D");
+		 * h.add("Z"); h.add(null); h.add(10); System.out.println(h.add("Z"));
+		 * 
+		 * System.out.println(h);
+		 * 
+		 * System.out.println("User defined objects in a HashSet ..");
+		 */
 
 		HashSet hs = new HashSet();
 
 		Species s = new Species("Dog");
-		Species s1 = new Species("Dog");
+		Species s1 = new Species("Dog1");
 
 		// scene 1
 		// System.out.println(hs.add(s));
@@ -94,6 +89,9 @@ class HashSetDemo {
 
 		hs.add(s);
 		hs.add(s1);
+		System.out.println(hs);
+		String str = s1.getName() + "tt";
+//		hs.add(str);
 		System.out.println(hs);
 
 	}
@@ -110,6 +108,7 @@ class LinkedHashSetDemo {
 		h.add("D");
 		h.add("Z");
 		h.add(null);
+		h.add(null);
 		h.add(10);
 		System.out.println(h.add("Z"));
 
@@ -122,12 +121,12 @@ class TreeSetDemo1 {
 
 	public static void main(String[] args) {
 
-		TreeSet t = new TreeSet();
+		TreeSet<String> t = new TreeSet();
 		t.add("a");
 		t.add("F");
 		t.add("D");
 		t.add("Z");
-		// t.add(null); // NullPointerException
+		t.add(null); // NullPointerException
 		// t.add(10); // can not add need homogeneous datatype.
 		System.out.println(t.add("Z"));
 

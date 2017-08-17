@@ -1,4 +1,4 @@
-package com.app;
+package com.psl.app.collection;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -29,7 +29,7 @@ class ArrayListDemo {
 	}
 }
 
-// Program demonstrate LinkedList and its properties.
+// Program demonstrate LinkedList and it's properties.
 class LinkedListDemo {
 
 	public static void main(String[] args) {
@@ -37,6 +37,7 @@ class LinkedListDemo {
 		LinkedList l = new LinkedList();
 		l.add("durga");
 		l.add(30);
+		l.add(null);
 		l.add(null);
 		l.add("durga");
 
@@ -50,7 +51,7 @@ class LinkedListDemo {
 	}
 }
 
-// Program demonstrate LinkedList and its properties.
+// Program demonstrate LinkedList and it's properties.
 class VectorDemo {
 
 	public static void main(String[] args) {
@@ -95,6 +96,8 @@ class IteratorAndForEachLoopDemo {
 		al.add("Vijay");
 		al.add("Ravi");
 		al.add("Ajay");
+		al.add(null);
+		al.add(null);
 
 		Iterator itr = al.iterator();
 
@@ -148,6 +151,65 @@ class EnumerationDemo {
 	}
 }
 
+// ConcurrentModification Change; while one thread iterate other thread is not
+// allowed to change collection object. Note: traversing can be possible by
+// multiple Threads.
+class ConcurrentModificationDemo extends Thread {
+
+	static ArrayList<String> l = new ArrayList<String>();
+
+	public void run() {
+		System.out.println("In Run ..");
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		l.add("one");
+
+		// ListIterator<String> itr = l.listIterator();
+		//
+		// // Traversing using iterator loop.
+		//
+		// while (itr.hasNext()) {
+		// String s = itr.next();
+		// System.out.println(s);
+		// try {
+		// Thread.sleep(3000);
+		// } catch (InterruptedException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		// }
+	}
+
+	public static void main(String args[]) throws InterruptedException {
+		l.add("balakrishna");
+		l.add("venky");
+		l.add("chiru");
+		l.add("nag");
+
+		// System.out.println(l);
+
+		// ListIterator<String> itr = l.listIterator();
+
+		ConcurrentModificationDemo t = new ConcurrentModificationDemo();
+		t.start();
+		// Iterator<String> itr = l.iterator();
+		ListIterator<String> itr = l.listIterator();
+
+		// Traversing using iterator loop.
+
+		while (itr.hasNext()) {
+			String s = itr.next();
+			System.out.println(s);
+			Thread.sleep(3000);
+		}
+	}
+}
+
 // ListIteratorDemo
 class ListIteratorDemoDemo {
 	public static void main(String args[]) {
@@ -161,6 +223,8 @@ class ListIteratorDemoDemo {
 
 		ListIterator<String> itr = l.listIterator();
 
+		// Iterator<String> itr = l.iterator();
+
 		// Traversing using iterator loop.
 
 		while (itr.hasNext()) {
@@ -168,13 +232,15 @@ class ListIteratorDemoDemo {
 
 			if (s.equals("venky")) {
 				itr.remove();
-			} else if (s.equals("nag")) {
-				itr.add("chaitu");
-			} else if (s.equals("chiru")) {
-				itr.set("charan");
+			} else {
+				itr.add("revti");
 			}
 		}
 		System.out.println(l);
+
+		Vector<String> v = new Vector<String>();
+
+		Enumeration<String> enmr = v.elements();
 
 	}
 }

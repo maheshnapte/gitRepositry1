@@ -1,4 +1,4 @@
-package com.app;
+package com.psl.app.collection;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,8 +22,22 @@ class MapHashMap {
 	// old style
 	public static void main(String[] args) {
 
+		Hashtable ht = new Hashtable();
+
+		ht.put(1, "Mahesh");
+		ht.put(2, "Raj");
+		Enumeration enu = ht.elements();
+
+		while (enu.hasMoreElements()) {
+			Object e = enu.nextElement();
+			System.out.println(e);
+		}
+
+		System.out.println("-----------");
+
 		// Demo HasMap
 		Map map = new HashMap();
+
 		// demo LinkedHasMap
 		// Map map = new LinkedHashMap();
 		// Adding elements to map
@@ -32,6 +46,7 @@ class MapHashMap {
 		map.put(2, "Jai");
 		map.put(6, "Amit");
 		// Traversing Map
+
 		Set set = map.entrySet();// Converting to Set so that we can traverse
 		Iterator itr = set.iterator();
 		while (itr.hasNext()) {
