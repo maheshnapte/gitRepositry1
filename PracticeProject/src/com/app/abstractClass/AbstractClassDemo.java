@@ -1,4 +1,4 @@
-package com.app;
+package com.app.abstractClass;
 
 abstract class Bikes {
 	static int i = 12;

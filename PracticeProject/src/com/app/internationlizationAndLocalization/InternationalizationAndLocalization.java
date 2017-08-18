@@ -1,4 +1,4 @@
-package com.app;
+package com.app.internationlizationAndLocalization;
 
 import java.io.File;
 import java.io.IOException;

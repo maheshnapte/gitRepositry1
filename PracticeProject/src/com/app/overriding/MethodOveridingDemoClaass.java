@@ -1,4 +1,4 @@
-package com.app;
+package com.app.overriding;
 
 class Parent {
 	int qq = 13;

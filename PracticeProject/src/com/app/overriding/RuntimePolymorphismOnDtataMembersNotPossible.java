@@ -1,4 +1,4 @@
-package com.app;
+package com.app.overriding;
 
 class Bike {
 	int speedlimit = 90;

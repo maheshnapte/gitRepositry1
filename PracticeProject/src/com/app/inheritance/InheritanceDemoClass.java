@@ -1,4 +1,4 @@
-package com.app;
+package com.app.inheritance;
 
 class Animal11 {
 
@@ -36,7 +36,7 @@ class Dog extends Animal11 {
 	
 }
 
-public class InheritancDemoClass {
+public class InheritanceDemoClass {
 
 	public static void main(String args[]) {
 		Dog d = new Dog();

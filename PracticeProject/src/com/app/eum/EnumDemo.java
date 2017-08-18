@@ -1,4 +1,4 @@
-package com.app;
+package com.app.eum;
 
 public class EnumDemo {
 
