@@ -1,4 +1,4 @@
-package com.app;
+package com.app.beansDemo;
 
 public class Student {
 	String name;

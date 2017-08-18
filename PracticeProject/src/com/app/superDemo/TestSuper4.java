@@ -1,4 +1,4 @@
-package com.app;
+package com.app.superDemo;
 
 class Animal1 {
 	Animal1() {

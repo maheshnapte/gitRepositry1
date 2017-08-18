@@ -1,4 +1,4 @@
-package com.psl.app.collection;
+package com.app.collection;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

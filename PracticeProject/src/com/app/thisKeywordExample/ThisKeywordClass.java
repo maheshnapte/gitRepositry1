@@ -1,4 +1,4 @@
-package com.app;
+package com.app.thisKeywordExample;
 
 public class ThisKeywordClass {
 
