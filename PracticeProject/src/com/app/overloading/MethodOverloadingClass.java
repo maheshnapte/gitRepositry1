@@ -2,6 +2,39 @@ package com.app.overloading;
 
 import java.util.Date;
 
+class A {
+	static int x = 100;
+
+	static void methd() {
+		System.out.println("In static A");
+	}
+}
+
+class B extends A {
+	static void methd() {
+		System.out.println("In static B");
+	}
+}
+
+abstract class methodOverloadingClass1 {
+	abstract void meth1();
+
+	static void meth1(int x) {
+
+	}
+
+	final void meth1(int x, int y) {
+
+	}
+
+	void meth1(int... x) {
+
+	}
+	// abstract static combination is not allowed
+	// static abstract void meth1(int x,int y,int z);}
+
+}
+
 public class MethodOverloadingClass {
 	int p = 10;
 
@@ -51,13 +84,13 @@ public class MethodOverloadingClass {
 	// System.out.println("int");
 	// }
 
-//	static void m1(double a) {
-//		System.out.println("double");
-//	}
+	// static void m1(double a) {
+	// System.out.println("double");
+	// }
 
-//	static void m1(float a) {
-//		System.out.println("float");
-//	}
+	// static void m1(float a) {
+	// System.out.println("float");
+	// }
 
 	static void m1(long a) {
 		System.out.println("long");
@@ -76,7 +109,8 @@ public class MethodOverloadingClass {
 		 */
 
 		// Note: Here, we are allowed to declare mehod's as above div(float,int)
-		// and div(int, float) but when we give call and it can be handled by two
+		// and div(int, float) but when we give call and it can be handled by
+		// two
 		// methods then we will get error at compile time only for the calling
 		// method.
 		/*
@@ -89,13 +123,19 @@ public class MethodOverloadingClass {
 		// (int, float) and
 		// (float, int) you can see the demo.
 
-//		m1('c');
-		m1(100.4f);
+		// m1('c');
+		// m1(100.4f);
 
 		/*
 		 * Integer i=0; String ii = String.valueOf(44);
 		 * System.out.println(ii.concat("pp"));
 		 */
+
+		B b = new B();
+		b.methd();
+		System.out.println(b.x);
+		A a = new B();
+		a.methd();
 
 	}
 
