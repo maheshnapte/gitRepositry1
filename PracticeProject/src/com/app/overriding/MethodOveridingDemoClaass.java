@@ -25,9 +25,22 @@ class Parent {
 	// {
 	//
 	// }
+
+	void one() {
+
+	}
+
+	// void one()
+	// {
+	//
+	// }
 }
 
 class Child extends Parent {
+
+	void one() {
+
+	}
 
 	public int pp = 12;
 
@@ -80,22 +93,42 @@ abstract class C extends P {
 }
 
 class StaticDemoP {
+
+	static int x = 10;
+
 	static void m1() throws IOException {
-		System.out.println("P: m()");
+		System.out.println("P: m1()");
 	}
-	
-	public void p()
-	{
-		System.out.println("P");
+
+	static void m2() {
+		System.out.println("P: m2()");
+	}
+
+	public void p() {
+		System.out.println("p()");
 	}
 }
 
 // Method hiding demo
 class StaticDemoC extends StaticDemoP {
+    int x=12;
 	static void m1() throws FileNotFoundException, RuntimeException {
 		System.out.println("C: m()");
 
 	}
+
+	
+	// void m2() {
+	// System.out.println("P: m2()");
+	// }
+	
+	void k() {
+		System.out.println("x: " + x);
+	}
+
+	// StaticDemoC() throws IOException {
+	//
+	// }
 }
 
 public class MethodOveridingDemoClaass {
@@ -117,18 +150,30 @@ public class MethodOveridingDemoClaass {
 		 * System.out.println(p.check());
 		 */
 
+		// StaticDemoP p = new StaticDemoC();
+		//
+		// try {
+		// p.m1();
+		//
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+
+		// StaticDemoC c;
+		// try {
+		// c = new StaticDemoC();
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		// //
+
 		StaticDemoP p = new StaticDemoC();
 
-		try {
-			p.m1();
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		StaticDemoC c = new StaticDemoC();
-		c.p();
+//		c.m2();
+//		c.k();
+		System.out.println(p.x);
 
 	}
 
