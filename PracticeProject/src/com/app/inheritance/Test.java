@@ -69,6 +69,13 @@ public class Test {
 		System.out.println("S");
 
 		// I i = new I();
+	if(c instanceof B)
+		System.out.println("nnnnnnnnnnn");
 	}
 
+}
+
+class T extends Test
+{
+	
 }

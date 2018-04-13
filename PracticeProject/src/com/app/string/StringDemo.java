@@ -24,7 +24,7 @@ public class StringDemo {
 
 	}
 
-	// usig charAt method
+	// using charAt method
 	private static void traverseString() {
 		String s = "Mahesh";
 
@@ -142,8 +142,7 @@ class ModifyStringsInMultithreadedEnvironment extends Thread {
 	static int getCount(String s, char c) {
 		int count = 0;
 		for (int i = 0; i < s.length(); i++) {
-			if(s.charAt(i) == c)
-			{
+			if (s.charAt(i) == c) {
 				count++;
 			}
 		}
@@ -155,13 +154,13 @@ class ModifyStringsInMultithreadedEnvironment extends Thread {
 		int repeat = 0;
 		boolean flag = true;
 		for (int i = 0; i < s.length(); i++) {
-			 char c = s.charAt(i);
+			char c = s.charAt(i);
 			if (i == 0) {
-//				System.out.println(repeat+" "+getCount(s, s1));
+				// System.out.println(repeat+" "+getCount(s, s1));
 				repeat = getCount(s, c);
 				System.out.println(repeat);
 			} else {
-				System.out.println(repeat+" "+getCount(s, c));
+				System.out.println(repeat + " " + getCount(s, c));
 				if (repeat != getCount(s, c)) {
 					flag = false;
 					break;
@@ -201,8 +200,9 @@ class ModifyStringsInMultithreadedEnvironment extends Thread {
 		//
 		// System.out.println(b == c);
 
-		checkForEvenString();
+		 checkForEvenString();
 
+	
 	}
 
 }

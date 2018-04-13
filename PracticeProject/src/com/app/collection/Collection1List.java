@@ -1,6 +1,7 @@
 package com.app.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -96,8 +97,12 @@ class IteratorAndForEachLoopDemo {
 		al.add("Vijay");
 		al.add("Ravi");
 		al.add("Ajay");
-		al.add(null);
-		al.add(null);
+		//// al.add(null);
+		//// al.add(null);
+
+		// Note: When you do Collections.sort(List), then null should not
+		// be present in List.
+		// Collections.sort(al);
 
 		Iterator itr = al.iterator();
 

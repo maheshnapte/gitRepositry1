@@ -64,7 +64,6 @@ public class EqualsAndHashCode {
 		System.out.println("s1: " + s1.hashCode() + " s2: " + s2.hashCode() + " s3: " + s3.hashCode());
 
 		// hs.add(s1);
-
 		// hs.add(s3);
 		// hs.add(s4);
 		// hs.add(s5);

@@ -8,6 +8,16 @@ class A {
 	static void methd() {
 		System.out.println("In static A");
 	}
+
+	void m1(Object o) {
+		System.out.println("In o");
+	}
+
+	void m1(String s) {
+		System.out.println("In s");
+	}
+	
+	
 }
 
 class B extends A {
@@ -101,7 +111,6 @@ public class MethodOverloadingClass {
 
 		MethodOverloadingClass moc = new MethodOverloadingClass();
 
-		
 		/*
 		 * System.out.println(" " + moc.add1('a', 3)); // System.out.println(" "
 		 * + moc.add(1, 3));
@@ -132,12 +141,17 @@ public class MethodOverloadingClass {
 		 * System.out.println(ii.concat("pp"));
 		 */
 
-		B b = new B();
-		b.methd();
-		System.out.println(b.x);
-		A a = new B();
-		a.methd();
+		// B b = new B();
+		// b.methd();
+		// System.out.println(b.x);
+		// A a = new B();
+		// a.methd();
 
+		
+		A a = new A();
+		
+		a.m1(null);
+		
 	}
 
 }

@@ -26,9 +26,12 @@ public class ExceptionHandling {
 		// TODO Auto-generated method stub
 
 		Abc abc = new Abc();
-
-		abc.m1();
-
+		try {
+			abc.m1();
+		} catch (Error e) {
+//			System.out.println("I am handling error ...");
+			System.out.println(e);
+		}
 		// try {
 		// abc.m1();
 		// } catch (Exception e) {

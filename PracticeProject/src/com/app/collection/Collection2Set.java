@@ -1,5 +1,6 @@
 package com.app.collection;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -75,7 +76,7 @@ class HashSetDemo {
 
 		Species s = new Species("Dog");
 		Species s1 = new Species("Dog1");
-
+//		Collections.sort(hs);
 		// scene 1
 		// System.out.println(hs.add(s));
 		// System.out.println(hs);

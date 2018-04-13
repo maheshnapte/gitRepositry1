@@ -11,12 +11,16 @@ class MapHashMap {
 	// type(definition of a method)
 	static void newStyle() {
 		Map<Integer, String> map = new HashMap<Integer, String>();
-		map.put(100, "Amit");
+		map.put(101, "Amit");
 		map.put(101, "Vijay");
 		map.put(102, "Rahul");
+		
 		for (Map.Entry m : map.entrySet()) {
 			System.out.println(m.getKey() + " " + m.getValue());
 		}
+//		Collections.so
+//		
+//		Map<Integer, String> mapSyn = Collections.synchronizedMap(map);
 	}
 
 	// old style
@@ -72,6 +76,7 @@ class IdentityHashMapDemo {
 		Integer i1 = new Integer(1);
 		Integer i2 = new Integer(1);
 
+		// System.out.println(i1 == i2);
 		m.put(i1, "Mahesh");
 		m.put(i2, "Mahesh");
 		System.out.println(m);
@@ -118,6 +123,7 @@ class WeakHashMapDemo {
 class TreeMapDemo {
 	public static void main(String args[]) {
 		// Create and populate tree map
+		// Map m = new TreeMap()
 		Map<Integer, String> map = new TreeMap<Integer, String>();
 		map.put(102, "Let us C");
 		map.put(103, "Operating System");
@@ -158,7 +164,7 @@ public class Collection3Map {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

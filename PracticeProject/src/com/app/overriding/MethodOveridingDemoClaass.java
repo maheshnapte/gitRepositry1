@@ -34,6 +34,10 @@ class Parent {
 	// {
 	//
 	// }
+
+	static void s() {
+	}
+
 }
 
 class Child extends Parent {
@@ -73,6 +77,11 @@ class Child extends Parent {
 	void finalOverriding() {
 
 	}
+
+	void s() {
+	}
+
+
 }
 
 //
@@ -107,21 +116,30 @@ class StaticDemoP {
 	public void p() {
 		System.out.println("p()");
 	}
+
+	public static void p(int t) {
+		System.out.println("p()");
+	}
+
+	// public int p(int i) {
+	// System.out.println("p()");
+	// return 1;
+	// }
+
 }
 
 // Method hiding demo
 class StaticDemoC extends StaticDemoP {
-    int x=12;
+	// int x=12;
 	static void m1() throws FileNotFoundException, RuntimeException {
 		System.out.println("C: m()");
 
 	}
 
-	
 	// void m2() {
 	// System.out.println("P: m2()");
 	// }
-	
+
 	void k() {
 		System.out.println("x: " + x);
 	}
@@ -169,12 +187,14 @@ public class MethodOveridingDemoClaass {
 		// }
 		// //
 
-		StaticDemoP p = new StaticDemoC();
+		// StaticDemoP p = new StaticDemoC();
+		//
+		//// c.m2();
+		//// c.k();
+		// System.out.println(p.x);
 
-//		c.m2();
-//		c.k();
-		System.out.println(p.x);
-
+		StaticDemoC p = new StaticDemoC();
+		p.k();
 	}
 
 }

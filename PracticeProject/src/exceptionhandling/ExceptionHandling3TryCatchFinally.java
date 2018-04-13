@@ -22,6 +22,7 @@ public class ExceptionHandling3TryCatchFinally {
 	// If method catch's return is always overridden by finally's return.
 	static int add(int a, int b) {
 		int c = 0;
+	
 		try {
 
 			c = a + b;
@@ -32,14 +33,14 @@ public class ExceptionHandling3TryCatchFinally {
 			}
 
 		} catch (Exception e) {
-
 			System.out.println("Exception : " + e);
-			return 1000;
+			// return 1000;
 		} finally {
 			System.out.println("I am in finally.");
-			return 10;
+			// return 10;
 		}
-
+		System.out.println("code after finaly .. ");
+		return 10;
 	}
 
 	// When we throws an exception in a method as well as handles it locally (It
@@ -155,7 +156,8 @@ public class ExceptionHandling3TryCatchFinally {
 		int t = 0;
 
 		try {
-			t = add3();
+			t = add(1, 3);
+			System.out.println("t: " + t);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Exception handled by caller: " + e);
