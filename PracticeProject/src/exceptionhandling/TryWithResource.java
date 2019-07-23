@@ -16,7 +16,7 @@ public class TryWithResource {
 			int c =12/0;
 			System.out.println("Here");
 		} catch (Exception e) {
-			System.out.println("Exception e"+e);
+			System.out.println("Exception e: "+e);
 		} finally {
 			System.out.println("I am in finally..");
 		}

@@ -22,11 +22,13 @@ public class ExceptionHandling3TryCatchFinally {
 	// If method catch's return is always overridden by finally's return.
 	static int add(int a, int b) {
 		int c = 0;
-	
+
 		try {
 
 			c = a + b;
 			if (c < 10) {
+				System.out.println(
+						"This statement executes before return. When return comes before that finally block executes, then following return statement executes. Then even if there issome code after finally then also the code does not execute. Note: return statement is always a last statement in a code.");
 				return 9;
 			} else {
 				throw new Exception();
@@ -39,7 +41,7 @@ public class ExceptionHandling3TryCatchFinally {
 			System.out.println("I am in finally.");
 			// return 10;
 		}
-		System.out.println("code after finaly .. ");
+		// System.out.println("code after finally .. ");
 		return 10;
 	}
 
@@ -87,7 +89,7 @@ public class ExceptionHandling3TryCatchFinally {
 			return 1000;
 		} finally {
 			System.out.println("I am in finally.");
-			// return 10;
+			return 10;
 		}
 	}
 
@@ -98,12 +100,14 @@ public class ExceptionHandling3TryCatchFinally {
 	static int add3() throws Exception {
 		try {
 			System.out.println("Before throwing Exception ...");
+
 			throw new Exception();
 
 		} finally {
 			System.out.println("I am in finally.");
 			return 10;
 		}
+		// return 11;
 	}
 
 	private static void div(int a, int b) {
@@ -144,24 +148,22 @@ public class ExceptionHandling3TryCatchFinally {
 		// }
 		// System.out.println("t : " + t);
 
-		// int t = 0;
-		// try {
-		// t = add2(11, 1);
-		// } catch (Exception e) {
-		// // TODO Auto-generated catch block
-		// System.out.println("Exception handled by caller: " + e);
-		// }
-		// System.out.println("t : " + t);
-
 		int t = 0;
-
 		try {
-			t = add(1, 3);
-			System.out.println("t: " + t);
+			t = add2(11, 1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Exception handled by caller: " + e);
 		}
+		System.out.println("t : " + t);
+
+		/*
+		 * int t = 0;
+		 * 
+		 * try { t = add(11, 3); System.out.println("t: " + t); } catch (Exception e) {
+		 * // TODO Auto-generated catch block
+		 * System.out.println("Exception handled by caller: " + e); }
+		 */
 
 		// try {
 		// div(3, 0);
@@ -175,6 +177,13 @@ public class ExceptionHandling3TryCatchFinally {
 
 		// System.out.println(System.getProperty("java.version"));
 		// div(3, 0);
+
+/*		try {
+			System.out.println(add3());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("e: " + e);
+		}*/
 	}
 
 }

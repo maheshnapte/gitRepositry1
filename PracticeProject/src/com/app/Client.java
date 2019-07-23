@@ -1,5 +1,38 @@
 package com.app;
 
+
+abstract class A
+{
+	
+}
+
+abstract class B
+{
+	
+}
+
+interface I1
+{
+	
+}
+
+interface I2
+{
+	
+}
+
+class C extends A implements I1
+{
+	
+}
+
+
+abstract class Ab1
+{
+	abstract void m();
+	
+}
+
 public class Client {
 	
 	void m(int... x)

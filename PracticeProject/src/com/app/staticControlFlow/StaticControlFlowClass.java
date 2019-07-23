@@ -5,8 +5,8 @@ public class StaticControlFlowClass {
 	static int i = 10;
 
 	static {
-		// System.out.println(i);
-		// System.out.println(j);
+		 System.out.println(i);
+		 //System.out.println(j);
 		m1();
 		System.out.println("First static block");
 	}

@@ -94,6 +94,9 @@ class HashSetDemo {
 		String str = s1.getName() + "tt";
 //		hs.add(str);
 		System.out.println(hs);
+		
+		
+		
 
 	}
 }
@@ -176,9 +179,9 @@ class MyComparator implements Comparator {
 		Integer i2 = (Integer) arg1;
 
 		if (i1 < i2) {
-			return 1;
-		} else if (i1 > i2) {
 			return -1;
+		} else if (i1 > i2) {
+			return 1;
 		} else {
 			return 0;
 		}
@@ -187,7 +190,7 @@ class MyComparator implements Comparator {
 		// do following:
 		// return i1.compareTo(i2);
 
-		// if you want to preserve insertion order then do folllowing:
+		// if you want to preserve insertion order then do following:
 		// return 1;
 
 		// only first element will be inserted and all other elements are
@@ -284,7 +287,7 @@ class MyBookComparator implements Comparator<Book> {
 
 class TreeSetExample {
 	public static void main(String[] args) {
-		// Set<Book> set = new TreeSet<Book>();// Invokes default sorting using
+		 //Set<Book> set = new TreeSet<Book>();// Invokes default sorting using
 		// Comparable Interface.
 		Set<Book> set = new TreeSet<Book>(new MyBookComparator());// Invokes
 																	// customized

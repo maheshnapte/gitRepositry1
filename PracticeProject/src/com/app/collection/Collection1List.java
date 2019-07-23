@@ -3,8 +3,10 @@ package com.app.collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Stack;
 import java.util.Vector;
@@ -14,18 +16,34 @@ class ArrayListDemo {
 
 	public static void main(String[] args) {
 
-		ArrayList l = new ArrayList();
-		System.out.println(l.size());
-		l.add("A");
-		l.add(10);
-		l.add("A");
-		l.add(null);
+		// ArrayList l = new ArrayList();
+		// System.out.println(l.size());
+		// l.add("A");
+		// l.add(10);
+		// l.add("A");
+		// l.add(null);
+		//
+		// l.remove(2);
+		// System.out.println(l);
+		// l.add(2, "M");
+		// l.add("N");
+		// System.out.println(l);
 
-		l.remove(2);
-		System.out.println(l);
-		l.add(2, "M");
-		l.add("N");
-		System.out.println(l);
+		//
+
+		List al = new ArrayList();
+
+		System.out.println("");
+		Species s = new Species("Dog");
+		Species s1 = new Species("Dog1");
+
+		if (s == s1) {
+			System.out.println(" == executed");
+		}
+
+		if (s.equals(s1)) {
+			System.out.println("equals executed");
+		}
 
 	}
 }
@@ -85,7 +103,7 @@ class StackDemo {
 								// maintained like list.
 
 		System.out.println(s.peek());
-		System.out.println(s.search("A"));
+		System.out.println(s.search("B"));
 		System.out.println(s.search("Z"));
 	}
 }
@@ -93,11 +111,13 @@ class StackDemo {
 class IteratorAndForEachLoopDemo {
 	public static void main(String args[]) {
 		ArrayList<String> al = new ArrayList<String>();
-		al.add("Ravi");
+		// al.add(1);
+		// al.add("Ravi");
 		al.add("Vijay");
 		al.add("Ravi");
 		al.add("Ajay");
-		//// al.add(null);
+		al.add("Kunal");
+		// al.add(null);
 		//// al.add(null);
 
 		// Note: When you do Collections.sort(List), then null should not
@@ -107,18 +127,24 @@ class IteratorAndForEachLoopDemo {
 		Iterator itr = al.iterator();
 
 		// Traversing using iterator loop.
-
+		System.out.println(al.size());
 		while (itr.hasNext()) {
-			System.out.println(itr.next());
+			String ele = (String) itr.next();
+			if (ele.equals("Vijay")) {
+				itr.remove();
+			}
+			System.out.println(ele);
 		}
-
+		System.out.println(al.size());
 		System.out.println("-----------------------------");
 		// Traversing using For-each loop.
 		for (String obj : al)
+		{
+		//	al.remove(1); not possible ; we will get "java.util.ConcurrentModificationException"
 			System.out.println(obj);
-
+		}
 		System.out.println(" --- Enumeration --");
-
+       
 	}
 }
 
@@ -134,7 +160,9 @@ class EnumerationDemo {
 
 		while (en.hasMoreElements()) {
 			Integer i = en.nextElement();
+			System.out.println("v.size: "+v.size());
 			if (i % 2 == 0) {
+				v.remove(v.get(i));
 				System.out.println(i);
 			}
 		}
@@ -200,12 +228,12 @@ class ConcurrentModificationDemo extends Thread {
 
 		// ListIterator<String> itr = l.listIterator();
 
-		ConcurrentModificationDemo t = new ConcurrentModificationDemo();
-		t.start();
+		//ConcurrentModificationDemo t = new ConcurrentModificationDemo();
+		//t.start();
 		// Iterator<String> itr = l.iterator();
 		ListIterator<String> itr = l.listIterator();
 
-		// Traversing using iterator loop.
+	  // Traversing using iterator loop.
 
 		while (itr.hasNext()) {
 			String s = itr.next();
@@ -228,7 +256,7 @@ class ListIteratorDemoDemo {
 
 		ListIterator<String> itr = l.listIterator();
 
-		// Iterator<String> itr = l.iterator();
+	   // Iterator<String> itr = l.iterator();
 
 		// Traversing using iterator loop.
 
@@ -237,9 +265,8 @@ class ListIteratorDemoDemo {
 
 			if (s.equals("venky")) {
 				itr.remove();
-			} else {
 				itr.add("revti");
-			}
+			} 
 		}
 		System.out.println(l);
 

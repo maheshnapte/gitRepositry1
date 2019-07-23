@@ -21,6 +21,12 @@ class MapHashMap {
 //		Collections.so
 //		
 //		Map<Integer, String> mapSyn = Collections.synchronizedMap(map);
+		
+		// for my testing, how keyset works
+		for(Integer k : map.keySet())
+		{
+			System.out.println(k+ " --- "+map.get(k));
+		}
 	}
 
 	// old style
@@ -30,6 +36,7 @@ class MapHashMap {
 
 		ht.put(1, "Mahesh");
 		ht.put(2, "Raj");
+
 		Enumeration enu = ht.elements();
 
 		while (enu.hasMoreElements()) {
@@ -59,6 +66,8 @@ class MapHashMap {
 			Map.Entry entry = (Map.Entry) itr.next();
 			System.out.println(entry.getKey() + " " + entry.getValue());
 		}
+		
+		
 		newStyle();
 	}
 }
@@ -150,7 +159,7 @@ class PropertiesDemo {
 		String s = p.getProperty("venky");
 		System.out.println(s);
 
-		p.setProperty("nag", "888888888");
+		p.setProperty("nag", "999888888");
 
 		FileOutputStream fos = new FileOutputStream("credentials.properties");
 		// FileOutputStream fos = new FileOutputStream("credentials.xml");
