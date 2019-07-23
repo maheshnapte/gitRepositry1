@@ -36,7 +36,8 @@ public class ReflectionDemo {
 		String className = s.nextLine();
 		// String className = args[0]; // "A"
 
-		Class c = Class.forName("com.app.reflection." + className);
+		String fullyQualifiedname = "com.app.reflection." + className;
+		Class c = Class.forName(fullyQualifiedname);
 
 		Object cl = c.newInstance();
 		A a;
@@ -57,7 +58,11 @@ public class ReflectionDemo {
 		// Creating object of a class
 		Calculate calculate = new Calculate();
 		// instantiating Class class
-		Class<? extends Calculate> classcls = calculate.getClass();
+		/*
+		 * Class<? extends Calculate> classcls = calculate.getClass();
+		 */ // or
+		Class<? extends Calculate> classcls = Calculate.class;
+
 		System.out.println(classcls);
 		// Getting declared methods inside the Calculate class
 		Method[] method = classcls.getDeclaredMethods(); // It returns array of methods
