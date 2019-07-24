@@ -6,7 +6,7 @@ class Depersist {
 	public static void main(String args[]) {
 		
 		//ObjectInputStream in=null;
-		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("f.txt"))){
+		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("f"))){
 			// Creating stream to read the object
 			//in = new ObjectInputStream(new FileInputStream("f.txt"));
 			Student s = (Student) in.readObject();
